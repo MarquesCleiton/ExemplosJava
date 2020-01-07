@@ -13,8 +13,6 @@ public class URI1164 {
 				soma += cont;
 		}while(soma<n);
 		
-		System.out.println("Soma: " + soma);
-		
 		if(soma == n)
 			System.out.println(n + " eh perfeito");
 		else
