@@ -10,10 +10,9 @@ public class ExemploLeitura {
 		
 		int a;
 		float b;
-		String texto;
 		
 		System.out.println("Digite o seu nome: ");
-		texto = teclado.nextLine();
+		//String texto = teclado.nextLine();
 		System.out.println("Digite um valor inteiro: ");
 		a = teclado.nextInt();
 		System.out.println("Digite um valor real   : ");
