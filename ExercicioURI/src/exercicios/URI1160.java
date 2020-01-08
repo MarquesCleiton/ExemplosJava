@@ -13,7 +13,7 @@ public class URI1160 {
 			double g2 = teclado.nextDouble()/100;
 			
 			int anos = 0;
-			while(pa<=pb && anos < 1000) {
+			while(pa<=pb && anos <=100 ) {
 				pa = (int)(pa + pa*g1);
 				pb = (int)(pb + pb*g2);
 				anos ++;
