@@ -1,24 +1,55 @@
 
 public class Livro {
-	private String titulo;
-	private String autor;
-	private int anoPublicacao;
-	private String categoria;
-	private int numeroInstante;
-	private int numeroPrateleira;
+	private String  titulo;
+	private String  autor;
+	private int     anoPublicacao;
+	private String  categoria;
+	private int     numeroInstante;
+	private int     numeroPrateleira;
 	private boolean emprestado;
 
 	public Livro(String titulo, String autor, int anoPublicacao, String categoria, int numeroInstante,
-			int numeroPrateleira, boolean emprestado) {
-		this.titulo = titulo;
-		this.autor = autor;
-		this.anoPublicacao = anoPublicacao;
-		this.categoria = categoria;
-		this.numeroInstante = numeroInstante;
+			int numeroPrateleira) {
+		this.titulo           = titulo;
+		this.autor            = autor;
+		this.anoPublicacao    = anoPublicacao;
+		this.categoria        = categoria;
+		this.numeroInstante   = numeroInstante;
 		this.numeroPrateleira = numeroPrateleira;
-		this.emprestado = emprestado;
+		this.emprestado       = false;
 	}
-	
+
+	public void emprestar() {
+		if (emprestado) {
+			System.out.println("livro indisponível");
+		} else {
+			System.out.println("Livro está sendo emprestado");
+			this.emprestado = true;
+		}
+
+	}
+
+	public void devolver() {
+		if (!emprestado) {
+			System.out.println("O livro já foi devolvido!");
+		} else {
+			System.out.println("O livro está sendo devolvido");
+			this.emprestado = false;
+		}
+	}
+
+	public void infoLivro() {
+		System.out.println("+----------------------------------------+");
+		System.out.println("Titulo               : " + titulo);
+		System.out.println("Autor                : " + autor);
+		System.out.println("Ano de publicação    : " + anoPublicacao);
+		System.out.println("Categoria            : " + categoria);
+		System.out.println("Numero da Instante   : " + numeroInstante);
+		System.out.println("Numero da Prateleira : " + numeroPrateleira);
+		System.out.println("Situação emprestimo  : " + ((emprestado)?"Indisponível":"Disponível"));
+		System.out.println("+-----------------------------------------+");
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}
@@ -73,36 +104,5 @@ public class Livro {
 
 	public void setEmprestado(boolean emprestado) {
 		this.emprestado = emprestado;
-	}
-
-	public void emprestar() {
-		if (emprestado) {
-			System.out.println("livro já está ");
-		} else {
-			System.out.println("Livro está sendo emprestado");
-			this.emprestado = true;
-		}
-
-	}
-
-	public void devolver() {
-		if (!emprestado) {
-			System.out.println("O livro já foi devolvido!");
-		} else {
-			System.out.println("O livro está sendo devolvido");
-			this.emprestado = false;
-		}
-	}
-	
-	public void infoLivro() {
-	
-		System.out.println("Titulo               : " + titulo);
-		System.out.println("Autor                : " + autor);
-		System.out.println("Ano de publicação    : " + anoPublicacao);
-		System.out.println("Categoria            : " + categoria);
-		System.out.println("Numero da Instante   : " + numeroInstante);
-		System.out.println("Numero da Prateleira : " + numeroPrateleira);
-		System.out.println("Situação emprestimo  : " + emprestado);
-		
 	}
 }
